@@ -1,0 +1,18 @@
+.shadow-box {
+    border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.blue-text {
+    color: #18A4E0;
+}
+.info-card {
+    min-height: 250px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+
+.product-card-price {
+
+}

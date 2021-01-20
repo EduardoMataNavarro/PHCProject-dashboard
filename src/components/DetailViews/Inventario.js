@@ -32,7 +32,7 @@ export default class Inventario extends Component {
     componentDidMount() {
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/articulo/',
+            url: 'https://pchproject-api.herokuapp.com/api/articulo',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Articulos: [...response] }, () => {
@@ -45,7 +45,7 @@ export default class Inventario extends Component {
         });
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/sucursal/',
+            url: 'https://pchproject-api.herokuapp.com/api/sucursal',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Sucursales: [...response] }, () => {

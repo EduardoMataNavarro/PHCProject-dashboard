@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import $ from 'jquery';
 
 import { FaEdit, FaTrash, FaExpandAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default class Ventas extends Component {
     constructor(props){
@@ -14,9 +15,9 @@ export default class Ventas extends Component {
 
     componentDidMount(){
         $.ajax({
-            url: 'https://pchproject-api.herokuapp.com/api/venta',
+            url: 'http://localhost:8000/api/venta',
             method: 'GET',
-            type: 'json',
+            dataType: 'json',
             success: function (response) {
                 this.setState({Ventas: [...response]});
             }.bind(this),
@@ -38,9 +39,8 @@ export default class Ventas extends Component {
                             <tr>
                                 <th scope="col">Folio</th>
                                 <th scope="col">Fecha</th>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Sucursal</th>
                                 <th scope="col">Total</th>
+                                <th scope="col">Estatus</th>
                                 <th scope="col">Acción</th>
                             </tr>
                         </thead>
@@ -50,22 +50,12 @@ export default class Ventas extends Component {
                                 this.state.Ventas.map((venta, index) => {
                                     return (
                                         <tr key={index}>
-                                            <td>{venta.Clave}</td>
-                                            <td>{venta.Nombre}</td>
+                                            <td>{venta.Folio}</td>
+                                            <td>{new Date(venta.created_at).toLocaleString()}</td>
                                             <td>{venta.Peso}</td>
+                                            <td>{venta.Estatus}</td>
                                             <td>
-                                                <button
-                                                    type="button"
-                                                    className="button button-edit"
-                                                    onClick={() => this.handleEdit(venta._id)}>
-                                                    <FaEdit style={{ verticalAlign: 'baseline' }} />
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    className="button button-danger"
-                                                    onClick={() => this.handleDelete(venta._id)}>
-                                                    <FaTrash style={{ verticalAlign: 'baseline' }} />
-                                                </button>
+                                                <Link to={`/venta/detail/${venta.id}`}>Ver</Link>
                                             </td>
                                         </tr>
                                     )

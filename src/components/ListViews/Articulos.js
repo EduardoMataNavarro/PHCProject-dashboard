@@ -12,8 +12,8 @@ export default class Articulos extends Component {
     }
     componentDidMount(){
         $.ajax({
+            url: 'https://pchproject-api.herokuapp.com/api/articulo',
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/articulo/',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Articulos: [...response] })

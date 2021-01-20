@@ -49,7 +49,7 @@ export default class Estado extends Component {
 
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/sucursal/',
+            url: 'https://pchproject-api.herokuapp.com/api/sucursal',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Sucursales: [...response] })

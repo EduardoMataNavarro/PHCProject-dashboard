@@ -13,7 +13,7 @@ export default class Inventarios extends Component {
     componentDidMount() {
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/inventario/',
+            url: 'https://pchproject-api.herokuapp.com/api/inventario',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Inventarios: [...response] }, () => {

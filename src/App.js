@@ -90,7 +90,7 @@ export default class App extends Component {
                 <Route path='/inventarios' exact component={Inventarios} />
                 
                 <Route path='/ventas' exact component={Ventas} />
-                <Route path='/venta/:id' exact component={Venta} />
+                <Route path='/venta/detail/:id' exact component={Venta} />
 
                 <Route path='/metodoenvio/detail/:id' exact component={MetodoEnvio} />
                 <Route path='/metodoenvio/create' exact render={(props) => <MetodoEnvio isCreating={true} {...props} /> } />

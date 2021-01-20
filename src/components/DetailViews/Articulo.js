@@ -54,7 +54,7 @@ export default class Articulo extends Component {
     componentDidMount() {
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/categoria/',
+            url: 'https://pchproject-api.herokuapp.com/api/categoria',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Categorias: [...response] })
@@ -66,7 +66,7 @@ export default class Articulo extends Component {
 
         $.ajax({
             method: 'GET',
-            url: 'https://pchproject-api.herokuapp.com/api/marca/',
+            url: 'https://pchproject-api.herokuapp.com/api/marca',
             dataType: 'json',
             success: function (response) {
                 this.setState({ Marcas: [...response] })
@@ -164,7 +164,7 @@ export default class Articulo extends Component {
         }
 
         let xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://localhost:8000/api/articulo', true);
+        xhr.open('POST', 'https://pchproject-api.herokuapp.com/api/articulo', true);
         xhr.send(formdata);
         xhr.onreadystatechange = function (response) {
             if (xhr.readyState == 4) {
